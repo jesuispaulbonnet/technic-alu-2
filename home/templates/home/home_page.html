@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="slider">
+  <ul class="slides">
+    {% for item in page.carousel_images.all %}
+    <li>
+      {% image item.image fill-800x600 class="responsive-img" %}
+      <div class="caption center-align">
+        <h3 class="light grey-text text-lighten-3">{{ item.title }}</h3>
+        <h5 class="light grey-text text-lighten-3">{{ item.subtitle }}</h5>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+<div id="info" class="home-content page-container fade-in-up">
+    <div class="row center-align">
+        <div class="flow-text col s12">
+            {{ page.presentation_text | richtext }}
+        </div>
+    </div>
+    {% for item in page.presentation_blocks.all %}
+        <div class="card-panel row valign-wrapper">
+            <div class="col s12 m4 {% if forloop.counter|divisibleby:2 %}push-m8{% endif %} center-align">
+                {% image item.image fill-500x300 class="responsive-img" %}
+            </div>
+            <div class="col s12 m8 {% if forloop.counter|divisibleby:2 %}pull-m4{% endif %} description">
+                {{ item.description | richtext }}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+    <script type="text/javascript" src="{% static 'dist/home_page.min.js' %}"></script>
+{% endblock %}

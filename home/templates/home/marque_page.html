@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+<div class="page-container fade-in-up">
+    <div class="row">
+        <h3 class="col s12 center-align">{{ page.title }}</h3>
+        <div class="col s12 description flow-text">{{ page.text | richtext }}</div>
+    </div>
+    {% for item in page.marque_blocks.all %}
+        <div class="card-panel marque-panel row valign-wrapper">
+            <div class="col s12 m4 {% if forloop.counter|divisibleby:2 %}push-m8{% endif %} center-align">
+                {% image item.image width-300 class="responsive-img" %}
+            </div>
+            <div class="col s12 m8 {% if forloop.counter|divisibleby:2 %}pull-m4{% endif %} description">
+                {{ item.description | richtext }}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

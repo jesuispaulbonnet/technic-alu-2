@@ -1,0 +1,32 @@
+{
+  "name": "technic-alu-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesuispaulbonnet/technic-alu.git"
+  },
+  "author": "Paul Bonnet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jesuispaulbonnet/technic-alu/issues"
+  },
+  "homepage": "https://github.com/jesuispaulbonnet/technic-alu#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "jshint": "^2.9.5",
+    "gulp-minify": "^2.1.0"
+  },
+  "dependencies": {
+    "npm": "^6.9.0"
+  }
+}

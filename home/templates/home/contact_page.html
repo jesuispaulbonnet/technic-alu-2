@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+{% load staticfiles %}
+
+{% block content %}
+{% csrf_token %}
+<div class="gmap">
+    <iframe
+      width="600"
+      height="450"
+      frameborder="0"
+      style="border:0"
+      src="https://www.google.com/maps/embed/v1/place?key={{api_key}}
+        &q={{ page.map_address }}
+        &center={{ page.lat }},{{ page.lng }}
+        &zoom={{ page.zoom }}
+        &language=fr"
+        allowfullscreen>
+    </iframe>
+</div>
+<div class="page-container page-content">
+    <div class="card-panel contact-panel fade-in-up row">
+        <div class="col m4 s12 contact-info">
+            <div class="col s12 description">
+                {{ page.contact | richtext }}
+            </div>
+            <div class="col s12 description">
+                {{ page.address | richtext }}
+            </div>
+            <div class="col s12 description">
+                {{ page.other_info | richtext }}
+            </div>
+            <hr class="blue-text hide-on-med-and-up text-lighten-4 col s12"/>
+        </div>
+        {% verbatim %}
+        <div id="contact_form_container" class="col m8 s12">
+          <script id='contact_form' type='text/ractive'>
+            <h3 class="col s12">Envoyez un message</h3>
+            <div class="message-form">
+                <div class="input-field col m6 s12">
+                  <input placeholder="Prénom et nom"
+                         id="message_name"
+                         type="text"
+                         value="{{form.name}}">
+                  <label for="name">Nom</label>
+                </div>
+                <div class="input-field col m6 s12">
+                  <input placeholder="Sujet du message"
+                         id="message_subject"
+                         type="text"
+                         value="{{form.subject}}">
+                  <label for="subject">Sujet</label>
+                </div>
+                <div class="input-field col m6 s12">
+                  <input placeholder="Adresse Email"
+                         id="message_email"
+                         type="email"
+                         value="{{form.email}}">
+                  <label for="email">Email</label>
+                </div>
+                <div class="input-field col m6 s12">
+                  <input placeholder="Numéro de mobile ou fixe"
+                         id="message_phone_number"
+                         type="text"
+                         value="{{form.phone_number}}">
+                  <label for="phone_number">Téléphone</label>
+                </div>
+                <div class="input-field col s12">
+                  <textarea id="message_text"
+                            class="materialize-textarea"
+                            placeholder="Contenu de votre message"
+                            value="{{form.message}}"></textarea>
+                  <label for="message">Message</label>
+                </div>
+                <div class="col s12">
+                    <button class="btn waves-effect waves-light blue darken-4"
+                            on-click="send_message"
+                            {{#if !form_completed || form_sent}}disabled{{/if}}>
+                        {{#if form_loading}}
+                          {{>loading}}
+                        {{elseif form_sent}}
+                          Envoyé
+                        {{else}}
+                          Envoyez
+                        {{/if}}
+                    </button>
+                </div>
+            </div>
+            <script id='loading' type='text/ractive'>
+              <div class="preloader-wrapper loader-send-message active">
+                <div class="spinner-layer">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div><div class="gap-patch">
+                    <div class="circle"></div>
+                  </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+              </div>
+            </script>
+          </script>
+
+        </div>
+        {% endverbatim %}
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+    <script type="text/javascript" src="{% static '/lib/ractive/ractive.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'dist/contact_page.min.js' %}"></script>
+{% endblock %}

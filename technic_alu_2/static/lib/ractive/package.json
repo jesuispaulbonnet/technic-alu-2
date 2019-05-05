@@ -1,0 +1,112 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "ractive",
+        "scope": null,
+        "escapedName": "ractive",
+        "name": "ractive",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Users\\Tuware\\Documents\\projects\\wagtail\\technic-alu"
+    ]
+  ],
+  "_from": "ractive@latest",
+  "_id": "ractive@0.9.11",
+  "_inCache": true,
+  "_location": "/ractive",
+  "_nodeVersion": "6.12.2",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/ractive-0.9.11.tgz_1513706578884_0.6108987405896187"
+  },
+  "_npmUser": {
+    "name": "evs-chris",
+    "email": "evschris@gmail.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "ractive",
+    "scope": null,
+    "escapedName": "ractive",
+    "name": "ractive",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/ractive/-/ractive-0.9.11.tgz",
+  "_shasum": "ff4e851e3863f0f7ac1f887f2317a72ad211a33e",
+  "_shrinkwrap": null,
+  "_spec": "ractive",
+  "_where": "C:\\Users\\Tuware\\Documents\\projects\\wagtail\\technic-alu",
+  "bin": {
+    "ractive": "./bin/ractive"
+  },
+  "bugs": {
+    "url": "https://github.com/ractivejs/ractive/issues"
+  },
+  "dependencies": {},
+  "description": "Next-generation DOM manipulation",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "ff4e851e3863f0f7ac1f887f2317a72ad211a33e",
+    "tarball": "https://registry.npmjs.org/ractive/-/ractive-0.9.11.tgz"
+  },
+  "engines": {
+    "node": ">=4.0.0",
+    "npm": ">=2.14.2"
+  },
+  "homepage": "https://ractive.js.org",
+  "jsnext:main": "ractive.mjs",
+  "keywords": [
+    "binding",
+    "data binding",
+    "declarative",
+    "dom",
+    "handlebars",
+    "mustache",
+    "reactive",
+    "template",
+    "templates",
+    "templating",
+    "ui",
+    "view model"
+  ],
+  "license": "MIT",
+  "main": "ractive.js",
+  "maintainers": [
+    {
+      "name": "evs-chris",
+      "email": "chris@ev-soft.net"
+    },
+    {
+      "name": "fskreuz",
+      "email": "fskreuz@gmail.com"
+    },
+    {
+      "name": "martypdx",
+      "email": "marty@martypdx.com"
+    },
+    {
+      "name": "rich_harris",
+      "email": "richard.a.harris@gmail.com"
+    }
+  ],
+  "module": "ractive.mjs",
+  "name": "ractive",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ractivejs/ractive.git"
+  },
+  "scripts": {},
+  "version": "0.9.11"
+}

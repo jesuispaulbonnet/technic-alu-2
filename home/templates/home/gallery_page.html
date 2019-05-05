@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load staticfiles %}
+
+{% block content %}
+<input id="page_id" type="hidden"  value="{{ page.id }}">
+<div class="row">
+  <div id="gallery" class="page-content page-container fade-in-up">
+      <div class="row">
+          <h3 class="col s12 center-align">{{ page.title }}</h3>
+          <div class="col s12 description flow-text">{{ page.description|richtext }}</div>
+      </div>
+      {% verbatim %}
+      <div id="gallery_container">
+          <script id='gallery_images' type='text/ractive'>
+              {{#if images}}
+              <div class="row">
+                  {{#each images:i}}
+                      {{#if i < max_images}}
+                          <div class="col l3 m4 s12">
+                              <a class="gallery_links" href="{{ .image.file }}">
+                                  <img src="{{ .image_thumbnail.file }}"
+                                       alt="{{ .image.title }}"
+                                       title="{{ .caption }}"
+                                       class="responsive-img gallery-img fade-in-up"
+                                  />
+                              <a/>
+                          </div>
+                      {{/if}}
+                  {{/each}}
+              </div>
+              {{#if images.length > max_images}}
+                  <div class="row center-align">
+                      <button class="btn waves-effect waves-light blue darken-4"
+                              on-click="add_gallery_images">
+                          Voir plus
+                      </button>
+                  </div>
+              {{/if}}
+              {{/if}}
+          </script>
+      </div>
+      {% endverbatim %}
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+    <script type="text/javascript" src="{% static '/lib/ractive/ractive.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'dist/gallery_page.min.js' %}"></script>
+{% endblock %}

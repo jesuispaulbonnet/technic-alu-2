@@ -1,0 +1,92 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "ractive-events-keys",
+        "scope": null,
+        "escapedName": "ractive-events-keys",
+        "name": "ractive-events-keys",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Users\\Tuware\\Documents\\projects\\wagtail\\technic-alu"
+    ]
+  ],
+  "_from": "ractive-events-keys@latest",
+  "_id": "ractive-events-keys@0.2.1",
+  "_inCache": true,
+  "_location": "/ractive-events-keys",
+  "_nodeVersion": "1.2.0",
+  "_npmUser": {
+    "name": "rich_harris",
+    "email": "richard.a.harris@gmail.com"
+  },
+  "_npmVersion": "2.5.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "ractive-events-keys",
+    "scope": null,
+    "escapedName": "ractive-events-keys",
+    "name": "ractive-events-keys",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/ractive-events-keys/-/ractive-events-keys-0.2.1.tgz",
+  "_shasum": "adae302e8c4f4ca28b91274945e7a40698160751",
+  "_shrinkwrap": null,
+  "_spec": "ractive-events-keys",
+  "_where": "C:\\Users\\Tuware\\Documents\\projects\\wagtail\\technic-alu",
+  "author": {
+    "name": "Rich Harris"
+  },
+  "bugs": {
+    "url": "https://github.com/ractivejs/ractive-events-keys/issues"
+  },
+  "dependencies": {},
+  "description": "Key events plugin for Ractive.js",
+  "devDependencies": {
+    "gobble": "^0.7.14",
+    "gobble-babel": "^5.0.0",
+    "gobble-cli": "^0.3.5",
+    "gobble-esperanto-bundle": "^0.1.7",
+    "gobble-uglifyjs": "^0.2.1"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "adae302e8c4f4ca28b91274945e7a40698160751",
+    "tarball": "https://registry.npmjs.org/ractive-events-keys/-/ractive-events-keys-0.2.1.tgz"
+  },
+  "files": [
+    "src",
+    "dist",
+    "README.md"
+  ],
+  "gitHead": "249c84746cac7e4588e8989504a962f8b3059fc7",
+  "homepage": "https://github.com/ractivejs/ractive-events-keys",
+  "jsnext:main": "./src/ractive-events-keys.js",
+  "license": "MIT",
+  "main": "./dist/ractive-events-keys.js",
+  "maintainers": [
+    {
+      "name": "rich_harris",
+      "email": "richard.a.harris@gmail.com"
+    }
+  ],
+  "name": "ractive-events-keys",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ractivejs/ractive-events-keys.git"
+  },
+  "scripts": {
+    "build": "rm -rf dist; gobble build dist",
+    "prepublish": "npm run build"
+  },
+  "version": "0.2.1"
+}

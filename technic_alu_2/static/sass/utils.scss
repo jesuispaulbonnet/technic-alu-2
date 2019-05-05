@@ -1,0 +1,35 @@
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.fade-in-up {
+    animation: fade-in-up 1s;
+    transform-origin: top;
+    animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@keyframes fade-in-up {
+    0% {
+        transform: translateY(5%);
+        opacity: (0);
+    }
+    75% {
+        opacity: (1);
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: (1);
+    }
+}

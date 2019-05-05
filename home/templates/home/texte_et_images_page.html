@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="page-container page-content">
+    <div class="card-panel contact-panel fade-in-up row description">
+        <h3 class="col s12 center-align">{{ page.title }}</h3>
+        {% for item in page.texte_ou_images.all %}
+            {{ item.text | richtext }}
+            <div class="center-align">
+              {% image item.image original as tmp_photo %}
+              <a href="{{tmp_photo.url}}" class="img-gallery">
+                  {% image item.image width-1000 class="responsive-img gallery-img no-box-shadow" %}
+              </a>
+            </div>
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+    <script type="text/javascript" src="{% static 'dist/texte_et_images_page.min.js' %}"></script>
+{% endblock %}

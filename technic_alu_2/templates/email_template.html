@@ -1,0 +1,19 @@
+<h3>Message de technic-alu.fr</h3>
+<strong>Nom:</strong>
+<p>
+  {{name}}
+</p>
+<strong>Téléphone:</strong>
+<p>
+  {{phone_number}}
+</p>
+<strong>Email:</strong>
+<p>
+  {{email}}
+</p>
+<strong>Message:</strong>
+<p>
+  {% autoescape off %}
+    {{message}}
+  {% endautoescape %}
+</p>
